@@ -6,13 +6,14 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 11:36:27 by ngastana          #+#    #+#             */
-/*   Updated: 2025/01/31 11:56:15 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:21:03 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void randomChumo (std::string name)
+void randomChump (std::string name)
 {
-	std::cout << "holita randomChumo" << std::endl;
+	Zombie zombie(name);
+	zombie.announce();
 }

@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 11:36:31 by ngastana          #+#    #+#             */
-/*   Updated: 2025/01/31 11:54:47 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/02/03 19:32:32 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 Zombie* newZombie(std::string name)
 {
-	std::cout << "holita randomChumo" << std::endl;    
+	if (name.empty())
+		name = "Foo";
+	return new Zombie(name); 
 }
