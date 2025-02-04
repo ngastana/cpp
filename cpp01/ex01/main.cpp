@@ -5,29 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 16:46:05 by ngastana          #+#    #+#             */
-/*   Updated: 2025/02/04 16:27:26 by ngastana         ###   ########.fr       */
+/*   Created: 2025/02/04 16:37:17 by ngastana          #+#    #+#             */
+/*   Updated: 2025/02/04 19:04:51 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+Zombie::Zombie() : _name("Unnamed") {}
+
 Zombie::Zombie(std::string name) : _name(name) {
 	if (_name.empty())
 		_name = "Foo";
 }
+
 Zombie::~Zombie() {
 	std::cout << "Zombie " << _name << " destroyed :P" << std::endl;
 }
 
 int main()
 {
-	Zombie creatZombie("");
-	creatZombie.announce();
-	Zombie* heapZombie = newZombie("New");	
-	heapZombie->announce();
-	delete heapZombie;
-	randomChump("random");
-	
+	int numZombies = 5;
+	Zombie * hordeZombie = zombieHorde(numZombies, "Holi");
+	if (hordeZombie)
+	{
+		for (int i = 0; i<numZombies; i++)
+		{
+			hordeZombie[i].announce();
+		}
+		delete[] hordeZombie;
+	}
 	return 0;
 }

@@ -20,8 +20,6 @@ class Contacts
 		void setPhoneNumber(std::string phonenumber);
 		void setDarkestSecret(std::string lastname);
 
-
-
 		std::string getName();
 		std::string getLastName();
 		std::string getNickname();
