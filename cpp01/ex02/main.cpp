@@ -5,26 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 19:23:04 by ngastana          #+#    #+#             */
-/*   Updated: 2025/02/04 19:23:59 by ngastana         ###   ########.fr       */
+/*   Created: 2025/02/04 16:37:17 by ngastana          #+#    #+#             */
+/*   Updated: 2025/02/05 17:45:09 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie::Zombie() : _name("Unnamed") {}
-
-Zombie::Zombie(std::string name) : _name(name) {
-	if (_name.empty())
-		_name = "Foo";
-}
-
-Zombie::~Zombie() {
-	std::cout << "Zombie " << _name << " destroyed :P" << std::endl;
-}
+# include <iostream>
 
 int main()
 {
+	std::string string = "HI THIS IS BRAIN";
+	std::string* stringPTR = &string;
+	std::string& stringREF = string;
 
+	std::cout << "The memory address of the string variable: " << &string << std::endl;
+	std::cout << "The memory address held by stringPTR: " << stringPTR << std::endl;
+	std::cout << "The memory address held by stringREF: " << &stringREF << std::endl;
+	
+	std::cout << "The value of the string variable: " << string << std::endl;
+	std::cout << "The value pointed to by stringPTR: " << *stringPTR << std::endl;
+	std::cout << "The value pointed to by stringREF: " << stringREF << std::endl;	
+    std::cout << std::endl << std::endl;
+	
 	return 0;
 }

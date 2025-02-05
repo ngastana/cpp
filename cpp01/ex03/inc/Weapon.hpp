@@ -9,12 +9,11 @@ class Weapon
 		Weapon();
 		~Weapon ();
 
-        std::type getType();
-        void setType(std::type type);
+		const Weapon* getType(void);
+		void setType(Weapon type);
 
 	private:
 		std::string _type;
 };
-
 
 #endif

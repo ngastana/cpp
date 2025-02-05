@@ -1,6 +1,6 @@
-NAME = HI_THIS_IS_BRAIN
+NAME = Unnecessary_violence
 
-SRC = main.cpp
+SRC = src/*.cpp
 
 CXX = c++ -Wall -Wextra -Werror -std=c++98
 
