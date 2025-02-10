@@ -6,23 +6,11 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 19:23:04 by ngastana          #+#    #+#             */
-/*   Updated: 2025/02/05 18:35:02 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:46:02 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/HumanB.hpp"
-
-Weapon::Weapon() {}
-
-Weapon::~Weapon() {
-}
-
-HumanA::HumanA() {}
-HumanA::~HumanA() {}
-
-HumanB::HumanB() {}
-HumanB::~HumanB(){}
-
 
 int main()
 {
@@ -36,8 +24,8 @@ int main()
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
-		jim.setWeapon(club);
 		jim.attack();
+		jim.setWeapon(club);
 		club.setType("some other type of club");
 		jim.attack();
 	}
