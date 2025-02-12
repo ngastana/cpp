@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:56:06 by ngastana          #+#    #+#             */
-/*   Updated: 2025/02/11 19:52:38 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/02/12 12:44:55 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,22 @@ std::string replace_word (std::string line, char *s1, char *s2)
 	std::string newline;
 	size_t pos = 0;
 
-	while (index != std::string::npos)
+	pos = line.find(s1, pos);
+	std::cout << line << std::endl;
+	std::cout << "-------" << std::endl;
+	while (pos != std::string::npos)
 	{
-		pos = line.find(s1, index);
-		if ((pos = line.find(s1, pos)) != std::string::npos)
-		{
-			newline = line.substr(index, pos);
-			newline += s2;
-		}
+		std::cout << "INDEX:" << index << std::endl;
+		std::cout << "POS:" << pos << std::endl;
+		newline += line.substr(index, (pos - index));
+		std::cout << newline << std::endl;
+		newline += s2;
+		std::cout << newline << std::endl;
 		index = pos + std::strlen(s1);
+		pos = line.find(s1, index);
 	}
-	newline += line.substr(pos);
+	newline += line.substr(index);
+	std::cout << newline << std::endl;
 	return (newline);
 }
 
@@ -61,7 +66,7 @@ void set_is_for_losers (char *filename, char *s1, char *s2)
 int main (int argc, char *argv[])
 {
 	if (argc != 4)
-		std::cout << "Santa mierda me has metido" << std::endl;
+		std::cout << "Meteme " << std::endl;
 	else
 		set_is_for_losers(argv[1], argv[2], argv[3]);
 	return (1);
