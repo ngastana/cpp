@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:37:17 by ngastana          #+#    #+#             */
-/*   Updated: 2025/02/04 19:04:51 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/02/17 20:00:31 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ Zombie::Zombie(std::string name) : _name(name) {
 }
 
 Zombie::~Zombie() {
-	std::cout << "Zombie " << _name << " destroyed :P" << std::endl;
+	std::cout << "⚰ Zombie " << _name << " died..." << std::endl;
 }
 
 int main()
 {
-	int numZombies = 5;
-	Zombie * hordeZombie = zombieHorde(numZombies, "Holi");
+	int numZombies = 3;
+	Zombie * hordeZombie = zombieHorde(numZombies, "Nerea");
 	if (hordeZombie)
 	{
 		for (int i = 0; i<numZombies; i++)
