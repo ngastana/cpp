@@ -18,7 +18,7 @@ $(NAME): $(OBJ)
 	@$(CXX) -c $< -o $@
 
 clean:
-	rm -rf $(NAME) 
+	rm -rf $(OBJ) $(NAME) 
 
 fclean: clean
 

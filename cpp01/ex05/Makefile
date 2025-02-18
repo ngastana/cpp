@@ -1,6 +1,6 @@
-NAME = SED_IS_FOR_LOSERS
+NAME = HARL
 
-SRC = main.cpp
+SRC = main.cpp Harl.cpp
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
 

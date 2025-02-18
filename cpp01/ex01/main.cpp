@@ -6,26 +6,15 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:37:17 by ngastana          #+#    #+#             */
-/*   Updated: 2025/02/17 20:00:31 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:45:43 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() : _name("Unnamed") {}
-
-Zombie::Zombie(std::string name) : _name(name) {
-	if (_name.empty())
-		_name = "Foo";
-}
-
-Zombie::~Zombie() {
-	std::cout << "⚰ Zombie " << _name << " died..." << std::endl;
-}
-
 int main()
 {
-	int numZombies = 3;
+	int numZombies = 2;
 	Zombie * hordeZombie = zombieHorde(numZombies, "Nerea");
 	if (hordeZombie)
 	{
