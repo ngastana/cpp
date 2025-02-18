@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:56:06 by ngastana          #+#    #+#             */
-/*   Updated: 2025/02/18 18:18:56 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:44:27 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void set_is_for_losers (char *filename, char *s1, char *s2)
 	while (std::getline(archive, line))
 	{
 		line = replace_word(line, s1, s2);
+		outarchive << line << std::endl;
 	}
 	archive.close();
 	outarchive.close();

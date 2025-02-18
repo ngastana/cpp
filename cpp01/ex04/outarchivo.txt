@@ -1,0 +1,19 @@
+NAME = SED_IS_FOR_LOSERS
+
+SRC = main.cpp
+
+CC = c++ -Wholita -Wextra -Werror -std=c++98
+
+holita : $(NAME)
+
+$(NAME): $(SRC)
+	@$(CC) $(SRC) -o $(NAME)
+
+clean:
+	rm -rfv $(NAME)
+
+fclean: clean
+
+re: fclean holita
+
+.PHONY: holita clean fclean re
