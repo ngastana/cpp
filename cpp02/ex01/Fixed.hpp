@@ -3,13 +3,12 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
     public:
         Fixed ();
-        Fixed(Fixed &copy); //le podemos poner const dentro
-        Fixed &operator = (Fixed &other); //le podemos poner const dentro  
         Fixed (const int int_num); //It converts it to the corresponding fixed-point value.
         Fixed (const float float_num); //It converts it to the corresponding fixed-point value. 
         ~Fixed ();
@@ -21,5 +20,7 @@ class Fixed
         int _number;
         static const int _nb_fract_bits = 8;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
