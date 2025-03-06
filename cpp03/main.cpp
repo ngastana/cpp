@@ -14,14 +14,14 @@
 
 int main( void ) 
 {
-    ClapTrap persona("Manolita");
-    ClapTrap persona1("Ane");
-    ClapTrap persona2("Leire");
-    ClapTrap persona3("");
+    ClapTrap persona("Eneko");
+    ClapTrap persona1("Madona");
     
-    ClapTrap.attack("Manolita");
-    ClapTrap.takeDamage(2);
-    ClapTrap.beRepaired(2);
+    persona.attack("Robot1");
+    persona.beRepaired(2);
+    persona.attack(persona1.getName());
+    persona1.takeDamage(persona.getAttackDamage());
+    persona1.beRepaired(2);
     
     return 0;
 }

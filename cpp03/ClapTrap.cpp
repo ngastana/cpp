@@ -12,12 +12,10 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){
-    _name = "Nerea";
+ClapTrap::ClapTrap(): _name("Nerea"){
 }
 
-ClapTrap::ClapTrap(std::string name){   
-    _name = name;
+ClapTrap::ClapTrap(std::string name): _name(name){
 }
 
 ClapTrap::~ClapTrap() {
@@ -25,10 +23,11 @@ ClapTrap::~ClapTrap() {
 
 void ClapTrap::attack(const std::string& target)
 {
-    if (energy_points > 0)
+    _energy_points -= 1;
+    if (_energy_points > 0 && _hit_points > 0)
     {
-        energy_points--;
-        std::cout << "ClapTrap " << this->_name << " attack "<< target << ", causing " << this->attack_damage << std::endl;
+        _energy_points--;
+        std::cout << "ClapTrap " << this->_name << " attack "<< target << ", causing " << this->_attack_damage << std::endl;
     }
     else
         std::cout << "ClapTrap " << this->_name << " no tiene puntos" << std::endl;
@@ -36,23 +35,25 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (hit_points > 0)
+    _hit_points -= amount;
+    if (_hit_points > 0)
     {
-        hit_points=-amount;
+        _hit_points=-amount;
         std::cout << "ClapTrap " << this->_name << " take damage of "<< amount << std::endl;
     }
-    std::cout << "ClapTrap " << this->_name << " hasn't got life" << std::endl;
+    if (_hit_points <= 0)
+        std::cout << "ClapTrap " << this->_name << " hasn't got life" << std::endl;
 
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (energy_points > 0)
+    if (_energy_points > 0 && _hit_points > 0)
     {
-        energy_points--;
-        hit_points++;
+        _energy_points--;
+        _hit_points += amount;
         std::cout << "ClapTrap " << this->_name << "repairs itself the amount of "<< amount << std::endl;
     }
     else
-        std::cout << "ClapTrap " << this->_name << " no tiene puntos" << std::endl;
+        std::cout << "ClapTrap " << this->_name << " no tiene puntos ni de enegia o de pelea" << std::endl;
 }
