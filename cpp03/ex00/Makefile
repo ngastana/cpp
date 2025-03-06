@@ -1,7 +1,7 @@
 NAME = Aaaaand..._OPEN!
 
 SRC = main.cpp \
-		Fixed.cpp
+		ClapTrap.cpp
 
 OBJ = $(SRC: .cpp=.o)
 

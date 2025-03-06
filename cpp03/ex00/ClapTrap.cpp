@@ -12,13 +12,22 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("Nerea"){
+ClapTrap::ClapTrap(): _name("Nerea"), _hit_points(10), _energy_points(10), _attack_damage(0){
+
+std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
+
 }
 
-ClapTrap::ClapTrap(std::string name): _name(name){
+ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0){
+
+std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
+
 }
 
 ClapTrap::~ClapTrap() {
+
+std::cout << "ClapTrap " << this->_name << " has been destroyed" << std::endl;
+
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -27,7 +36,7 @@ void ClapTrap::attack(const std::string& target)
     if (_energy_points > 0 && _hit_points > 0)
     {
         _energy_points--;
-        std::cout << "ClapTrap " << this->_name << " attack "<< target << ", causing " << this->_attack_damage << std::endl;
+        std::cout << "ClapTrap " << this->_name << " attack "<< target << ", causing " << this->_attack_damage << "points of damage" << std::endl;
     }
     else
         std::cout << "ClapTrap " << this->_name << " no tiene puntos" << std::endl;
@@ -50,7 +59,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if (_energy_points > 0 && _hit_points > 0)
     {
-        _energy_points--;
+        _energy_points -= 1;
         _hit_points += amount;
         std::cout << "ClapTrap " << this->_name << "repairs itself the amount of "<< amount << std::endl;
     }

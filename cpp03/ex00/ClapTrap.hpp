@@ -21,9 +21,9 @@ class ClapTrap
 	
 	private:
 		std::string 	_name;
-		int		_hit_points = 10;
-		int		_energy_points = 10;
-		int		_attack_damage = 0;
+		int		_hit_points;
+		int		_energy_points;
+		int		_attack_damage;
 
 };
 
