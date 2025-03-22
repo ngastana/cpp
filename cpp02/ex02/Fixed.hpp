@@ -9,12 +9,12 @@ class Fixed
 	public:
 		Fixed ();
 		Fixed(const Fixed &copy);
-		Fixed (const int int_num); //It converts it to the corresponding fixed-point value.
-		Fixed (const float float_num); //It converts it to the corresponding fixed-point value. 
+		Fixed (const int int_num);
+		Fixed (const float float_num);
 		~Fixed ();
 
-		float toFloat( void ) const; //converts the fixed-point value to a floating-point value
-		int toInt( void ) const; //converts the fixed-point value to an integer value.
+		float toFloat( void ) const;
+		int toInt( void ) const;
 		
 		static Fixed& min(Fixed &fixed1, Fixed &fixed2);
 		static const Fixed& min(const Fixed &fixed1, const Fixed &fixed2);
@@ -33,10 +33,10 @@ class Fixed
 		Fixed	operator*(const Fixed &fixed) const;
 		Fixed	operator/(const Fixed &fixed) const;
 
-		Fixed&	operator++();
-		Fixed	operator++(int);
+		Fixed&	operator++(void);
+		Fixed	operator++(int num);
 		Fixed&	operator--(void);
-		Fixed	operator--(int);
+		Fixed	operator--(int num);
 
 	private:
 		int _number;

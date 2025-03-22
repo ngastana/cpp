@@ -1,21 +1,52 @@
 NAME = My_First_Class_in_Orthodox_Canonical_Form
 
-SRC = main.cpp \
-		Fixed.cpp
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g3 -fsanitize=address
 
-OBJ = $(SRC: .cpp=.o)
+CC = c++
 
-CC = c++ -Wall -Wextra -Werror -std=c++98
+SRC_FILES = main.cpp \
+            Fixed.cpp
+			
+		
+OBJS = $(SRC_FILES:.cpp=.o)
 
-all : $(NAME)
+CLR_RMV		:= \033[0m
+RED		    := \033[1;31m
+GREEN		:= \033[1;32m
+YELLOW		:= \033[1;33m
+BLUE		:= \033[1;34m
+CYAN 		:= \033[1;36m
 
-$(NAME): $(SRC)
-	@$(CC) $(SRC) -o $(NAME)
+define	ART
+$(RED)                                                        
+
+      ___           ___           ___     
+     /\  \         /\  \         /\  \    
+    /::\  \       /::\  \       /::\  \   
+   /:/\:\  \     /:/\:\  \     /:/\:\  \  
+  /:/  \:\  \   /::\~\:\  \   /::\~\:\  \ 
+ /:/__/ \:\__\ /:/\:\ \:\__\ /:/\:\ \:\__\ 
+ \:\  \  \/__/ \/__\:\/:/  / \/__\:\/:/  / 
+  \:\  \            \::/  /       \::/  /  
+   \:\  \            \/__/         \/__/   
+    \:\__\                                
+     \/__/                                
+
+ $(CLR_RMV)
+endef
+export	ART
+
+all: $(NAME)
+
+$(NAME): $(OBJS) #$(INCLUDE)
+	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "$$ART"
 
 clean:
-	rm -rfv $(OBJ) $(NAME)
+	@rm -f $(OBJS)
 
 fclean: clean
+	@rm -f $(NAME)
 
 re: fclean all
 
