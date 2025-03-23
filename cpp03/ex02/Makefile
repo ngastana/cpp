@@ -1,8 +1,8 @@
-NAME = Serena,_my_love!
+NAME = Repetitive_work!
 
 SRC = main.cpp \
 		ClapTrap.cpp \
-		ScavTrap.cpp \
+		FragTrap.cpp \
 
 OBJ = $(SRC: .cpp=.o)
 

@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 18:45:32 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/22 12:56:47 by ngastana         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Fixed.hpp"
 
 Fixed::Fixed() : _number(0) {
@@ -51,42 +39,46 @@ Fixed &Fixed::operator=(const Fixed &other) {
 
 bool Fixed::operator>(const Fixed &fixed) const
 {
-	return (this > &fixed);
+    return (this->_number > fixed._number); 
 }
 
 bool Fixed::operator<(const Fixed &fixed) const
 {
-	return (this < &fixed);
+	return (this->_number < fixed._number);
 }
 
 bool Fixed::operator>=(const Fixed &fixed) const
 {
-	return (this >= &fixed);
+	return (this->_number >= fixed._number);
 }
 
 bool Fixed::operator<=(const Fixed &fixed) const
 {
-	return (this <= &fixed);
+	return (this->_number <= fixed._number);
 }
 
 bool Fixed::operator==(const Fixed &fixed) const
 {
-	return (this == &fixed);
+	return (this->_number == fixed._number);
 }
 
 bool Fixed::operator!=(const Fixed &fixed) const
 {
-	return (this != &fixed);
+	return (this->_number != fixed._number);
 }
 
-Fixed Fixed::operator+(const Fixed &fixed) const
+Fixed Fixed::operator+(const Fixed &fixed) const 
 {
-	return (this->_number + fixed._number);	
+    Fixed result;
+    result._number = this->_number + fixed._number;
+    return result;
 }
 
 Fixed Fixed::operator-(const Fixed &fixed) const
 {
-	return (this->_number - fixed._number);	
+    Fixed result;
+    result._number = this->_number - fixed._number;
+    return result;
 }
 
 Fixed Fixed::operator*(const Fixed &fixed) const
@@ -101,7 +93,7 @@ Fixed Fixed::operator/(const Fixed &fixed) const
 {
 	Fixed result;
 	result._number= (this->_number << _nb_fract_bits) / fixed._number;
-	return (this->_number / fixed._number);	
+	return (result);
 }
 
 Fixed &Fixed::operator++(void)

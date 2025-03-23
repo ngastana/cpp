@@ -6,12 +6,11 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:50:42 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/05 18:44:29 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/16 10:47:21 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
 
 int main( void ) 
 {

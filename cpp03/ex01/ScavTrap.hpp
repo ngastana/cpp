@@ -1,9 +1,6 @@
 #ifndef SCAVTRAP_HPP
-# define CLAPTRAP_HPP
-
-#include <iostream>
+# define SCAVTRAP_HPP
 #include "ClapTrap.hpp"
-#include <cmath>
 
 class ScavTrap : public ClapTrap
 {

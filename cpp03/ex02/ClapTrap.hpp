@@ -3,15 +3,13 @@
 
 #include <iostream>
 #include <cmath>
-#include <string>
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 class ClapTrap
 {
 	public:
 		ClapTrap (void);
 		ClapTrap (std::string name);
-        ClapTrap(std::string name, int hit_points, int energy_points, int attack_damage);
 		~ClapTrap (void);
 
 		void attack(const std::string& target);

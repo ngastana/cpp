@@ -6,27 +6,22 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:20:51 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/16 10:49:36 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/16 10:39:15 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("Nerea"), _hit_points(100), _energy_points(50), _attack_damage(20){
+ClapTrap::ClapTrap(): _name("Nerea"), _hit_points(100), _energy_points(100), _attack_damage(30){
 
 std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
 
 }
 
-ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(100), _energy_points(50), _attack_damage(20){
+ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(100), _energy_points(100), _attack_damage(30){
 
 std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
 
-}
-
-ClapTrap::ClapTrap(std::string name, int hit_points, int energy_points, int attack_damage) : _name(name), _hit_points(hit_points), _energy_points(energy_points), _attack_damage (attack_damage)
-{
-std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {

@@ -1,0 +1,44 @@
+[1m/proyecto/Harl.hpp:19:14: [31m[35mperformance: inconclusive:[39m Technically the member function 'Harl::debug' can be static (but you may consider moving to unnamed namespace). [functionStatic][0m
+        void debug( void );
+             ^
+[1m/proyecto/Harl.cpp:21:12: [2mnote:[0m Technically the member function 'Harl::debug' can be static (but you may consider moving to unnamed namespace).
+void Harl::debug( void )
+           ^
+[1m/proyecto/Harl.hpp:19:14: [2mnote:[0m Technically the member function 'Harl::debug' can be static (but you may consider moving to unnamed namespace).
+        void debug( void );
+             ^
+[1m/proyecto/Harl.hpp:20:14: [31m[35mperformance: inconclusive:[39m Technically the member function 'Harl::info' can be static (but you may consider moving to unnamed namespace). [functionStatic][0m
+        void info( void );
+             ^
+[1m/proyecto/Harl.cpp:26:12: [2mnote:[0m Technically the member function 'Harl::info' can be static (but you may consider moving to unnamed namespace).
+void Harl::info( void )
+           ^
+[1m/proyecto/Harl.hpp:20:14: [2mnote:[0m Technically the member function 'Harl::info' can be static (but you may consider moving to unnamed namespace).
+        void info( void );
+             ^
+[1m/proyecto/Harl.hpp:21:14: [31m[35mperformance: inconclusive:[39m Technically the member function 'Harl::warning' can be static (but you may consider moving to unnamed namespace). [functionStatic][0m
+        void warning( void );
+             ^
+[1m/proyecto/Harl.cpp:31:12: [2mnote:[0m Technically the member function 'Harl::warning' can be static (but you may consider moving to unnamed namespace).
+void Harl::warning( void )
+           ^
+[1m/proyecto/Harl.hpp:21:14: [2mnote:[0m Technically the member function 'Harl::warning' can be static (but you may consider moving to unnamed namespace).
+        void warning( void );
+             ^
+[1m/proyecto/Harl.hpp:22:14: [31m[35mperformance: inconclusive:[39m Technically the member function 'Harl::error' can be static (but you may consider moving to unnamed namespace). [functionStatic][0m
+        void error( void );
+             ^
+[1m/proyecto/Harl.cpp:36:12: [2mnote:[0m Technically the member function 'Harl::error' can be static (but you may consider moving to unnamed namespace).
+void Harl::error( void )
+           ^
+[1m/proyecto/Harl.hpp:22:14: [2mnote:[0m Technically the member function 'Harl::error' can be static (but you may consider moving to unnamed namespace).
+        void error( void );
+             ^
+[1m/proyecto/Harl.cpp:41:34: [31mperformance:[39m Function parameter 'level' should be passed by const reference. [passedByValue][0m
+void Harl::complain( std::string level )
+                                 ^
+[1m/proyecto/Harl.cpp:43:14: [31mstyle:[39m Variable 'signal' can be declared with const [constVariable][0m
+ std::string signal[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+             ^
+[1mnofile:0:0: [31minformation:[39m Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem][0m
+
