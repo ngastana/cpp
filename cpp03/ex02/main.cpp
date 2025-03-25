@@ -6,25 +6,55 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:50:42 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/16 14:31:19 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/25 21:45:59 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main( void ) 
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
+int main()
 {
-    ClapTrap persona("Eneko");
-    ClapTrap persona1("Madona");
-    FragTrap persona2("Nerea");
+	ClapTrap	josebas("Josebas");
+	ClapTrap	kalletano("Kalletano");
+	ClapTrap	txutxi;
+	ScavTrap	manolito("Manu");
+	FragTrap	gustavito("Gustavito");
 
-    persona.attack("Robot1");
-    persona.beRepaired(2);
-    persona.attack(persona1.getName());
-    persona1.takeDamage(persona.getAttackDamage());
-    persona1.beRepaired(2);
-    persona2.highFivesGuys();
-    
-    return 0;
+	gustavito.highFivesGuys();
+	gustavito.attack("Andresin");
+	manolito.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	manolito.guardGate();
+	kalletano.takeDamage(20);
+	josebas.beRepaired(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+	josebas.attack("Kalletano");
+	kalletano.takeDamage(20);
+
+	return (0);
 }

@@ -1,15 +1,24 @@
 #include "ClapTrap.hpp"
 
-int main( void ) 
-{
-    ClapTrap persona("Eneko");
-    ClapTrap persona1("Madona");
+int main() {
+    ClapTrap robot1("RoboWarrior");
+    ClapTrap robot2("MechaDestroyer");
     
-    persona.attack("Robot1");
-    persona.beRepaired(2);
-    persona.attack(persona1.getName());
-    persona1.takeDamage(persona.getAttackDamage());
-    persona1.beRepaired(2);
+    robot1.attack("MechaDestroyer");
+    robot2.takeDamage(2); 
+    robot1.beRepaired(4);
     
+    for (int i = 0; i < 5; i++) {
+        robot1.attack("MechaDestroyer");
+        robot2.takeDamage(2);
+    }
+    
+    robot2.beRepaired(3);
+    robot1.attack("MechaDestroyer");
+    robot2.takeDamage(2);
+
+    robot1.takeDamage(10);
+    robot1.takeDamage(5);
+    robot1.takeDamage(1);
     return 0;
 }
