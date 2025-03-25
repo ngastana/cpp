@@ -1,4 +1,4 @@
-NAME = Aaaaand..._OPEN!
+NAME = Serena_my_love!
 
 SRC = main.cpp \
             ClapTrap.cpp \
