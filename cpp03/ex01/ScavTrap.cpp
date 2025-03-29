@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:20:51 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/25 21:37:27 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/29 10:15:36 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,22 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
     this->setAttackDamage(20);
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
+    std::cout << GREEN "Copy ScavTrap constructor called" << std::endl;
+    *this = other;
+}
 
 ScavTrap::~ScavTrap(void)
 {
     std::cout << RED "ScavTrap " << this->getName() << " has been destroyed" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+    if (this != &other) {
+        ClapTrap::operator=(other);
+    }
+    return *this;
 }
 
 void ScavTrap::guardGate(void)

@@ -1,9 +1,9 @@
-NAME = Repetitive_work
+NAME = Poymorphism!
 
 SRC = main.cpp \
-            ClapTrap.cpp \
-			FragTrap.cpp \
-			ScavTrap.cpp
+            animal.cpp \
+			cat.cpp \
+			dog.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

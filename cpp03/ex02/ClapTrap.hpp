@@ -15,10 +15,19 @@
 
 class ClapTrap
 {
+	protected:
+		std::string 	_name;
+		int		_hit_points;
+		int		_energy_points;
+		int		_attack_damage;
+
 	public:
 		ClapTrap (void);
 		ClapTrap (std::string name);
+		ClapTrap (const ClapTrap &copy);
 		~ClapTrap (void);
+
+		ClapTrap& operator = (const ClapTrap& other);
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
@@ -33,13 +42,6 @@ class ClapTrap
 		void increaseHitPoints(unsigned int amount){_hit_points = _hit_points + amount;};
 		void decreaseHitPoints(unsigned int amount){_hit_points = _hit_points - amount;};
 		void decreaseEnergyPoints(unsigned int amount){_energy_points = _energy_points - amount;};
-	
-	private:
-		std::string 	_name;
-		int		_hit_points;
-		int		_energy_points;
-		int		_attack_damage;
-
 };
 
 #endif
