@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:54:10 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/27 13:08:07 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/29 13:16:35 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,21 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
-
 class	Animal
 {
 	protected:
-		std::string	type;
+		std::string	_type;
 	
 	public:
 		Animal(void);
 		Animal(std::string type);
+		Animal(const Animal& copy);
 		virtual ~Animal(void);
 
-		std::string	getType() const;
-		void  		setType(std::string type);
-		virtual void		makeSound(void) const;
+		Animal& operator=(const Animal& other);
 		
+		std::string	getType() const;
+		virtual void	makeSound(void) const;
 };
 
 

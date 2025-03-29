@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:09:31 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/27 13:11:45 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/29 13:33:21 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,18 @@
 class	WrongAnimal
 {
 	protected:
-		std::string	type;
+		std::string	_type;
 	
 	public:
 		WrongAnimal(void);
 		WrongAnimal(std::string type);
+		WrongAnimal (const WrongAnimal &copy);
 		virtual ~WrongAnimal(void);
 
-		std::string	getType() const;
-		void  		setType(std::string type);
-		virtual void		makeSound(void) const;
+		WrongAnimal &operator=(const WrongAnimal &other);
 		
+		std::string	getType() const;
+		virtual void makeSound(void) const;
 };
 
 #endif

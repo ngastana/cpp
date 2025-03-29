@@ -5,7 +5,7 @@ SRC = main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++ -Wall -Wextra -Werror -std=c++98
+CC = c++ -Wall -Wextra -Werror -std=c++98 
 
 CLR_RMV		:= \033[0m
 RED		    := \033[1;31m

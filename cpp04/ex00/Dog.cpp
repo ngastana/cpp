@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:46:15 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/29 10:38:47 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:10:55 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,31 @@
 
 Dog::Dog(void) : Animal()
 {
-    std::cout << "Dog was created" << std::endl;
+    std::cout << GREEN "Dog was created" << std::endl;
+}
+
+Dog::Dog(const Dog& copy)
+{
+    std::cout << GREEN << "Dog copy constructor called" << RESET << std::endl;
+    *this = copy;  
 }
 
 Dog::~Dog(void)
 {
-    std::cout << "Dog was destroyed" << std::endl;
+    std::cout << RED "Dog was destroyed" << std::endl;
+}
+
+Dog &Dog::operator=(const Dog& other)
+{
+    std::cout << CYAN "Dog Copy assignment operator called" << std::endl;
+    if (this != &other) {
+        this->_type = other._type;
+    }
+    return *this;
 }
 
 void Dog::makeSound(void) const
 {
-    std::cout << "BARK BARK!!" << std::endl;
+    std::cout << RESET "BARK BARK!!" << std::endl;
 }
 

@@ -1,13 +1,15 @@
-NAME = Poymorphism!
+NAME = Poymorphism
 
 SRC = main.cpp \
-            animal.cpp \
-			cat.cpp \
-			dog.cpp
+            Animal.cpp \
+			Cat.cpp \
+			Dog.cpp \
+            WrongAnimal.cpp \
+            WrongCat.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++ -Wall -Wextra -Werror -std=c++98
+CC = c++ -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 CLR_RMV		:= \033[0m
 RED		    := \033[1;31m

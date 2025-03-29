@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:46:20 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/27 13:07:57 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/03/29 13:24:26 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ class	Dog : public Animal
 {
 	public:
 		Dog(void);
-		Dog(std::string type);
+		Dog (const Dog &copy);
 		~Dog(void);
 
+		Dog& operator=(const Dog& other);
+		
 		void	makeSound(void) const;
 };
 
