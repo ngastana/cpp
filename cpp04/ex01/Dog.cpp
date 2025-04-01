@@ -15,6 +15,7 @@
 Dog::Dog(void) : Animal("Dog")
 {
     std::cout << GREEN "Dog was created" << std::endl;
+	this->_brain = new Brain();
 }
 
 Dog::Dog(const Dog& copy)
@@ -26,6 +27,7 @@ Dog::Dog(const Dog& copy)
 Dog::~Dog(void)
 {
     std::cout << RED "Dog was destroyed" << std::endl;
+    delete this->_brain;
 }
 
 Dog &Dog::operator=(const Dog& other)
@@ -34,6 +36,9 @@ Dog &Dog::operator=(const Dog& other)
     if (this != &other) {
         this->_type = other._type;
     }
+    this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdea(i, other._brain->getIdea(i));
     return *this;
 }
 

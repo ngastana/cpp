@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 11:46:30 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 17:14:38 by ngastana         ###   ########.fr       */
+/*   Created: 2025/03/27 11:46:15 by ngastana          #+#    #+#             */
+/*   Updated: 2025/04/01 17:15:48 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Dog::Dog(void) : AAnimal("Dog")
 {
-    std::cout << GREEN "Cat was created" << std::endl;
-    this->_brain = new Brain();
+    std::cout << GREEN "Dog was created" << std::endl;
+	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat& copy)
+Dog::Dog(const Dog& copy)
 {
-    std::cout << GREEN << "Cat copy constructor called" << RESET << std::endl;
+    std::cout << GREEN << "Dog copy constructor called" << RESET << std::endl;
     *this = copy;  
 }
 
-Cat::~Cat(void)
+Dog::~Dog(void)
 {
-    std::cout << RED "Cat was destroyed" << std::endl;
+    std::cout << RED "Dog was destroyed" << std::endl;
     delete this->_brain;
 }
 
-Cat &Cat::operator=(const Cat& other)
+Dog &Dog::operator=(const Dog& other)
 {
-    std::cout << CYAN "Cat Copy assignment operator called" << std::endl;
+    std::cout << CYAN "Dog Copy assignment operator called" << std::endl;
     if (this != &other) {
         this->_type = other._type;
     }
@@ -42,17 +42,17 @@ Cat &Cat::operator=(const Cat& other)
     return *this;
 }
 
-void Cat::makeSound(void) const
+void Dog::makeSound(void) const
 {
-    std::cout << RESET "Miau Miauuuuuu!!" << std::endl;
+    std::cout << RESET "WOOOFFFF WOOOFFF!!" << std::endl;
 }
 
-std::string	Cat::getIdea(int i) const
+std::string	Dog::getIdea(int i) const
 {
 	return this->_brain->getIdea(i);
 }
 
-void		Cat::setIdea(int i, std::string const & idea)
+void		Dog::setIdea(int i, std::string const & idea)
 {
 	this->_brain->setIdea(i, idea);
 }

@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Cat::Cat(void) : AAnimal("Cat")
 {
     std::cout << GREEN "Cat was created" << std::endl;
     this->_brain = new Brain();
