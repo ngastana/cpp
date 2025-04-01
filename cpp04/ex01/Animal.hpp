@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 13:09:31 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 15:28:54 by ngastana         ###   ########.fr       */
+/*   Created: 2025/03/27 12:54:10 by ngastana          #+#    #+#             */
+/*   Updated: 2025/04/01 17:13:25 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+
+# include <iostream>
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -22,23 +24,22 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
-# include <iostream>
-
-class	WrongAnimal
+class	Animal
 {
 	protected:
 		std::string	_type;
 	
 	public:
-		WrongAnimal(void);
-		WrongAnimal(std::string type);
-		WrongAnimal (const WrongAnimal &copy);
-		virtual ~WrongAnimal();
+		Animal(void);
+		Animal(std::string type);
+		Animal(const Animal& copy);
+		virtual	~Animal();
 
-		WrongAnimal &operator=(const WrongAnimal &other);
+		Animal& operator=(const Animal& other);
 		
 		std::string	getType() const;
-		virtual void makeSound(void) const;
+		virtual std::string	getIdea(int i) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif

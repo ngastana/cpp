@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:46:30 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 15:30:38 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/01 17:14:38 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,14 @@ Cat &Cat::operator=(const Cat& other)
 void Cat::makeSound(void) const
 {
     std::cout << RESET "Miau Miauuuuuu!!" << std::endl;
+}
+
+std::string	Cat::getIdea(int i) const
+{
+	return this->_brain->getIdea(i);
+}
+
+void		Cat::setIdea(int i, std::string const & idea)
+{
+	this->_brain->setIdea(i, idea);
 }

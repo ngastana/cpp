@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:54:10 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/29 13:16:35 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/01 15:28:30 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class	Animal
 		Animal(void);
 		Animal(std::string type);
 		Animal(const Animal& copy);
-		virtual ~Animal(void);
+		virtual	~Animal();
 
 		Animal& operator=(const Animal& other);
 		

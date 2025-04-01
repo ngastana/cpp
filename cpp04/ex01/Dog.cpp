@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:46:15 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 15:49:13 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/01 17:15:48 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,12 @@ void Dog::makeSound(void) const
     std::cout << RESET "WOOOFFFF WOOOFFF!!" << std::endl;
 }
 
+std::string	Dog::getIdea(int i) const
+{
+	return this->_brain->getIdea(i);
+}
+
+void		Dog::setIdea(int i, std::string const & idea)
+{
+	this->_brain->setIdea(i, idea);
+}

@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:46:20 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/29 13:24:26 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:28:42 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	Dog : public Animal
 	public:
 		Dog(void);
 		Dog (const Dog &copy);
-		~Dog(void);
+		~Dog();
 
 		Dog& operator=(const Dog& other);
 		

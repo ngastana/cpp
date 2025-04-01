@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:55:20 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 15:49:45 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/01 17:12:26 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ std::string	Animal::getType() const
 void Animal::makeSound(void) const
 {
     std::cout << RESET "! --------- ! (undefined sound)" << std::endl;
+}
+
+std::string	Animal::getIdea(int i) const
+{
+	(void)i;
+	return "Undefined idea";
 }

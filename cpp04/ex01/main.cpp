@@ -6,42 +6,35 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:53:26 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 15:36:05 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:59:47 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
-
-	std::cout << std::endl << "+++++++++++++++" << std::endl << std::endl;
-
-	const WrongAnimal* wrongmeta = new WrongAnimal();
-	const WrongAnimal* wrongj = new WrongCat();
-	std::cout << wrongj->getType() << " " << std::endl;
-	std::cout << wrongmeta->getType() << " " << std::endl;
-	wrongj->makeSound();
-	wrongmeta->makeSound();
-	delete wrongmeta;
-	delete wrongj;
+	Animal* Zoo[10];
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+			Zoo[i] = new Dog();
+		else
+			Zoo[i] = new Cat();
+	}
 	
+	std::cout << std::endl << "-------------" << Zoo[4]->getType() << std::endl <<std::endl;
+	std::cout << Zoo[4]->getIdea(3) << std::endl;
+	
+	for (int i = 0; i < 10; i++)
+	{
+		Zoo[i]->makeSound();
+		delete Zoo[i];
+	}
 
-
+	system("leaks animal01");
 	return 0;
 }

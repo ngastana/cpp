@@ -1,11 +1,12 @@
-NAME = Poymorphism
+NAME = I_dont_want_to_set_the_world_on_fire
 
 SRC = main.cpp \
-            Animal.cpp \
+			Animal.cpp \
 			Cat.cpp \
 			Dog.cpp \
-            WrongAnimal.cpp \
-            WrongCat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp \
+			Brain.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

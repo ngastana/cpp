@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:53:30 by ngastana          #+#    #+#             */
-/*   Updated: 2025/03/29 13:25:29 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:28:39 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	Cat : public Animal
 	public:
 		Cat(void);
 		Cat (const Cat &copy);
-		~Cat(void);
+		~Cat();
 
 		Cat& operator=(const Cat& other);
 		
