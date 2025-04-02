@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:55:20 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 17:12:26 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:36:22 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ Animal :: Animal (const Animal& copy)
 
 Animal::~Animal (void)
 {
-    std::cout << RED "Animal was destroyed" << std::endl;
+    std::cout << RED "Animal was destroyed" RESET << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &other) {
     std::cout << CYAN "Animal Copy assignment operator called" << std::endl;
     if (this != &other) {
-        this->_type = other._type;
+        this->_type = other.getType();
     }
     return *this;
 }

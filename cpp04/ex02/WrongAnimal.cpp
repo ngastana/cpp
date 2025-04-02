@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:09:56 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 15:47:40 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/02 13:05:35 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,6 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
         this->_type = other._type;
     }
     return *this;
-}
-
-std::string	WrongAnimal::getType() const
-{
-    return this->_type;
 }
 
 void	WrongAnimal::makeSound(void) const

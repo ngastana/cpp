@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:46:15 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 17:15:48 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:49:08 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog(void) : Animal("Dog")
 Dog::Dog(const Dog& copy)
 {
     std::cout << GREEN << "Dog copy constructor called" << RESET << std::endl;
-    *this = copy;  
+    this->_brain = new Brain(*copy._brain);  
 }
 
 Dog::~Dog(void)
@@ -33,12 +33,21 @@ Dog::~Dog(void)
 Dog &Dog::operator=(const Dog& other)
 {
     std::cout << CYAN "Dog Copy assignment operator called" << std::endl;
-    if (this != &other) {
-        this->_type = other._type;
+    if (this != &other) 
+    {
+        Animal::operator=(other);
+        
+        delete this->_brain;
+        
+        if (other._brain) 
+        {
+            this->_brain = new Brain(*other._brain);
+        } 
+        else 
+        {
+            this->_brain = nullptr;
+        }
     }
-    this->_brain = new Brain();
-	for (int i = 0; i < 100; i++)
-		this->_brain->setIdea(i, other._brain->getIdea(i));
     return *this;
 }
 

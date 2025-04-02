@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:53:26 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 16:59:47 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:56:42 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,24 @@
 
 int main()
 {
-    AAnimal* animal1 = new Cat();
-    AAnimal* animal2 = new Dog();
+	AAnimal* Zoo[10];
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+			Zoo[i] = new Dog();
+		else
+			Zoo[i] = new Cat();
+	}
+	
+	std::cout << std::endl << "-------------" << Zoo[4]->getType() << std::endl <<std::endl;
+	std::cout << Zoo[4]->getIdea(3) << std::endl;
+	
+	for (int i = 0; i < 10; i++)
+	{
+		Zoo[i]->makeSound();
+		delete Zoo[i];
+	}
 
-    animal1->makeSound();  // Muestra "Meow!"
-    animal2->makeSound();  // Muestra "Woof!"
-
-    delete animal1;
-    delete animal2;
-
-    return 0;
+	system("leaks AAnimal01");
+	return 0;
 }

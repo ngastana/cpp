@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:53:26 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 16:59:47 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:03:37 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ int main()
 		Zoo[i]->makeSound();
 		delete Zoo[i];
 	}
-
-	system("leaks animal01");
 	return 0;
 }
