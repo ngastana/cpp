@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:09:31 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/02 13:05:39 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/09 09:53:52 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class	WrongAnimal
 
 		WrongAnimal &operator=(const WrongAnimal &other);
 		
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif

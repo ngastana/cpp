@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 13:09:31 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/09 09:53:34 by ngastana         ###   ########.fr       */
+/*   Created: 2025/04/09 10:25:36 by ngastana          #+#    #+#             */
+/*   Updated: 2025/04/09 11:53:24 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
+# include <iostream>
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -22,23 +24,27 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
-# include <iostream>
-
-class	WrongAnimal
+class Bureaucrat
 {
-	protected:
-		std::string	_type;
-	
-	public:
-		WrongAnimal(void);
-		WrongAnimal(std::string type);
-		WrongAnimal (const WrongAnimal &copy);
-		virtual ~WrongAnimal();
+    public:
+    Bureaucrat(void);
+    Bureaucrat(std::string name, int grade);
+    Bureaucrat(const Bureaucrat& copy);
+    virtual	~Bureaucrat();
+    
+    Bureaucrat& operator=(const Bureaucrat& other);
+    
+    std::string	getName(void) const;
+    int getGrade(void) const;
+    
+    void incrementGrade(void);
+    void decrementGrade(void);
 
-		WrongAnimal &operator=(const WrongAnimal &other);
-		
-		std::string	getType() const;
-		void makeSound(void) const;
+    private:
+        std::string	_name;
+        int         _grade;
 };
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat);
 
 #endif

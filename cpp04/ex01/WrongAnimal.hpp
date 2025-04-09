@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:09:31 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/01 15:28:54 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/09 09:53:40 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class	WrongAnimal
 		WrongAnimal &operator=(const WrongAnimal &other);
 		
 		std::string	getType() const;
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif
