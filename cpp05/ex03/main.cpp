@@ -14,6 +14,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 #include <iostream>
 #include <cstdlib> // for srand
 #include <ctime>   // for time
@@ -21,46 +22,13 @@
 int main() {
 	srand(time(NULL)); // Seed the random generator
 	try {
-		Bureaucrat boss("Alice", 1);
-		Bureaucrat junior("Bob", 135);
-		Bureaucrat intern("Charlie", 150);
+		Intern someIntern;
+		AForm* form = someIntern.makeForm("robotomy request", "Bender");
 
-		ShrubberyCreationForm shrub("garden");
-		RobotomyRequestForm robo("Bender");
-		PresidentialPardonForm pardon("Ford Prefect");
+		boss.signForm(*form);
+		boss.executeForm(*form);
+		delete form; // Don't forget to delete after using
 
-		std::cout << "\n===== FORM STATUS BEFORE SIGNING =====" << std::endl;
-		std::cout << shrub << std::endl;
-		std::cout << robo << std::endl;
-		std::cout << pardon << std::endl;
-
-		std::cout << "\n===== SIGNING FORMS =====" << std::endl;
-		junior.signForm(shrub);      // should work
-		junior.signForm(robo);       // should fail
-		boss.signForm(robo);         // should work
-		boss.signForm(pardon);       // should work
-
-		std::cout << "\n===== FORM STATUS AFTER SIGNING =====" << std::endl;
-		std::cout << shrub << std::endl;
-		std::cout << robo << std::endl;
-		std::cout << pardon << std::endl;
-
-		std::cout << "\n===== EXECUTING FORMS =====" << std::endl;
-
-		intern.executeForm(shrub);   // should fail (grade too low)
-		std::cout << "\n==========" << std::endl;
-		junior.executeForm(shrub);   // should work
-		std::cout << "\n==========" << std::endl;
-		boss.executeForm(robo);      // should work (robotomy 50%)
-		std::cout << "\n==========" << std::endl;
-		boss.executeForm(robo);      // run it twice to test randomness
-		std::cout << "\n==========" << std::endl;
-		boss.executeForm(pardon);    // should work
-		
-		std::cout << "\n✅ ALL TESTS COMPLETED!" << std::endl;
-
-	} catch (std::exception &e) {
-		std::cerr << "💥 Exception caught: " << e.what() << std::endl;
 	}
 	return 0;
 }
