@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:38:48 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 12:29:38 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:31:55 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,16 @@ const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
     return  RED "Grade is too low" RESET;
+}
+
+void Bureaucrat::signForm(Form& form)
+{
+    try {
+        form.beSigned(*this);
+        std::cout << *this << GREEN " signed " << form.getName() << RESET << std::endl;
+    }
+    catch (std::exception& e) {
+        std::cout << *this << " couldn't sign " << form.getName()
+                  << " because " << RED << e.what() << RESET << std::endl;
+    }
 }

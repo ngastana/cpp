@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:25:36 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/09 13:38:03 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/10 19:15:53 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "AForm.hpp"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -40,6 +41,8 @@ class Bureaucrat
         void incrementGrade(void);
         void decrementGrade(void);
     
+        void signForm(AForm& form);
+
         class GradeTooHighException : public std::exception
         {
             public:
@@ -51,6 +54,7 @@ class Bureaucrat
             public:
                 virtual const char *what(void) const throw();
         };
+        void executeForm(AForm const & form) const;
 
     private:
         const std::string	_name;
