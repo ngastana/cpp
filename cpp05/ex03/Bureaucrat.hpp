@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:25:36 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 19:15:53 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/12 09:40:19 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat
         Bureaucrat(void);
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat& copy);
-        virtual	~Bureaucrat();
+        ~Bureaucrat();
         
         Bureaucrat& operator=(const Bureaucrat& other);
         

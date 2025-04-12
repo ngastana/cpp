@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:42:38 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 18:19:02 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/12 09:39:22 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(std::string const& target);
 ;
 		RobotomyRequestForm(const RobotomyRequestForm& copy);
-		virtual	~RobotomyRequestForm();
+		~RobotomyRequestForm();
 		
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 		

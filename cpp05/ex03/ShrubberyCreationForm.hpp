@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:39:11 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 22:11:56 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/12 09:39:28 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ShrubberyCreationForm : public AForm //debe heredar a AForm
 		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(const std::string& target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-		virtual	~ShrubberyCreationForm();
+		~ShrubberyCreationForm();
 		
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 		

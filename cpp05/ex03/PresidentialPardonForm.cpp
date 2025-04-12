@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:40:32 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 21:16:18 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/12 09:53:39 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ std::ostream& operator<<(std::ostream& out, const PresidentialPardonForm& form) 
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
+	std::cout << BLUE << this->_target << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
     if (!this->isSigned())
         throw AForm::FormNotSignedException();
     if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
-    std::cout << BLUE << this->_target << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 22:57:49 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 22:57:50 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/12 10:20:39 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,42 @@ Intern::Intern(const Intern& copy) { (void)copy; }
 Intern::~Intern(void) {}
 Intern& Intern::operator=(const Intern& other) { (void)other; return *this; }
 
-AForm* Intern::*makeForm(const std::string& nameForm, const std::string& targetForm) {
-	std::string names[] = {
-		"shrubbery creation",
-		"robotomy request",
-		"presidential pardon"
-	};
+AForm* createShrubbery(const std::string& target) {
+	return new ShrubberyCreationForm(target);
+}
 
-	AForm* forms[] = {
-		new ShrubberyCreationForm(targetForm),
-		new RobotomyRequestForm(targetForm),
-		new PresidentialPardonForm(targetForm)
+AForm* createRobotomy(const std::string& target) {
+	return new RobotomyRequestForm(target);
+}
+
+AForm* createPardon(const std::string& target) {
+	return new PresidentialPardonForm(target);
+}
+
+struct FormEntry {
+	std::string name;
+	AForm* (*creator)(const std::string&);
+};
+
+const char *Intern::UnofficialFormException::what(void) const throw()
+{
+    return  RED "form is not found" RESET;
+}
+
+AForm* Intern::makeForm(const std::string& nameForm, const std::string& targetForm) 
+{
+	FormEntry form[] = {
+		{"shrubbery creation", &createShrubbery},
+		{"robotomy request", &createRobotomy},
+		{"presidential pardon", &createPardon}
 	};
 
 	for (int i = 0; i < 3; ++i) {
-		if (nameForm == names[i]) {
+		if (nameForm == form[i].name) 
+		{
 			std::cout << "Intern creates " << nameForm << std::endl;
-			return forms[i];
-		} else {
-			delete forms[i]; // prevent memory leak for unused ones
+			return form[i].creator(targetForm);
 		}
 	}
-
-	throw std::invalid_argument("Intern: Form not found");
+	throw UnofficialFormException();
 }

@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:40:54 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 19:02:35 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/12 09:39:14 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(const std::string& target);
 		PresidentialPardonForm(const PresidentialPardonForm& copy);
-		virtual	~PresidentialPardonForm();
+		~PresidentialPardonForm();
 		
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
 		void execute(Bureaucrat const & executor) const;

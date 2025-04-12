@@ -6,7 +6,7 @@
 /*   By: ngastana < ngastana@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 22:57:37 by ngastana          #+#    #+#             */
-/*   Updated: 2025/04/10 22:57:38 by ngastana         ###   ########.fr       */
+/*   Updated: 2025/04/12 10:17:37 by ngastana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,21 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
-class Bureaucrat;
-
 class Intern
 {	
 	public:
 		Intern(void);
 		Intern(const Intern& copy);
-		virtual	~Intern();
+		~Intern();
 		
 		Intern& operator=(const Intern& other);
-        AForm* makeForm(std::string& nameForm, std::string& targetForm);
+		AForm* makeForm(const std::string& nameForm, const std::string& targetForm);
+
+		class UnofficialFormException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif
